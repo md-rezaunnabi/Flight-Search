@@ -1,1 +1,50 @@
-<p>flight-search-panel works!</p>
+<div class="search-form-container bg-white p-4">
+    <form class="search-form d-flex justify-content-center align-items-center" (ngSubmit)="onFormSubmit()">
+        <div class="form-field">
+            <dx-text-box stylingMode="outlined" height="50" width="300"
+                [placeholder]="'enterDepartureAirportCode'|transloco"
+                [(value)]="flightSearchRequest.DepartureAirportCode" [showClearButton]="true">
+                <dx-validator>
+                    <dxi-validation-rule type="required" [message]="'airportCodeRequiredValMsg' | transloco">
+                    </dxi-validation-rule>
+                    <dxi-validation-rule type="stringLength" [min]="3" [max]="3"
+                        [message]="'airportCodeLengthValMsg' | transloco">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-text-box>
+        </div>
+        <div class="form-field">
+            <dx-text-box stylingMode="outlined" height="50" width="300"
+                [placeholder]="'enterArrivalAirportCode'|transloco" [(value)]="flightSearchRequest.ArrivalAirportCode"
+                [showClearButton]="true">
+                <dx-validator>
+                    <dxi-validation-rule type="required" [message]="'airportCodeRequiredValMsg' | transloco">
+                    </dxi-validation-rule>
+                    <dxi-validation-rule type="stringLength" [min]="3" [max]="3"
+                        [message]="'airportCodeLengthValMsg' | transloco">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-text-box>
+        </div>
+        <div class="form-field">
+            <dx-date-box stylingMode="outlined" height="50" width="300" displayFormat="d MMM y"
+                [placeholder]="'enterDepartureDate'|transloco" [(value)]="flightSearchRequest.DepartureDate">
+                <dx-validator>
+                    <dxi-validation-rule type="required" [message]="'departureDateRequiredValMsg' | transloco">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-date-box>
+        </div>
+        <div class="form-field">
+            <dx-date-box stylingMode="outlined" height="50" width="300" displayFormat="d MMM y"
+                [placeholder]="'enterArrivalDate'|transloco" [min]="flightSearchRequest.DepartureDate"
+                [(value)]="flightSearchRequest.ArrivalDate">
+            </dx-date-box>
+        </div>
+        <div class="form-field">
+            <dx-button stylingMode="contained" height="50" width="150" icon="search" type="default"
+                useSubmitBehavior="true" [text]="'search'|transloco">
+            </dx-button>
+        </div>
+    </form>
+</div>
