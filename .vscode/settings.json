@@ -1,0 +1,56 @@
+{
+  // #region files config (sharable to .vscode)
+  "files.exclude": {
+    ".git": true,
+    ".vscode": true,
+    "dist": true,
+    "node_modules": true
+  },
+  // #endregion
+  // #region editor code format and language config (sharable to .vscode)
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  // disable default prettier code formatting for js,ts files so that eslint can format those
+  "[javascript]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // disable all built-in syntax checking so that eslint can check the syntax
+  "javascript.validate.enable": false,
+  "[typescript]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.referencesCodeLens.enabled": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  // for html formatting use beautify
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "html.format.indentHandlebars": true,
+  "html.format.preserveNewLines": false,
+  "html.format.indentInnerHtml": true,
+  // on code save perform code actions to fix all issues by eslint, organize imports
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  // emmet code hint config
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
+  // #endregion
+}
