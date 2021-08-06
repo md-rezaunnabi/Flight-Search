@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./flight-search/flight-search.module').then((m) => m.FlightSearchModule) }
+  { path: '', loadChildren: () => import('./flight/flight.module').then((m) => m.FlightModule) }
   // { path: '**', component: ErrorComponent, data: { error: 404 } }
 ];
 
