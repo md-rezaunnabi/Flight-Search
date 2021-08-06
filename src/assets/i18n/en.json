@@ -6,5 +6,6 @@
   "enterDepartureDate": "Enter Departure Date *",
   "enterArrivalDate": "Enter Arrival Date",
   "departureDateRequiredValMsg": "Departure Date is required!",
-  "search": "Search"
+  "searchByAirlineName": "Search your flights by airline name",
+  "findFlights": "Find Flights"
 }

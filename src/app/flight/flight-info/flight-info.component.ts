@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { IFlightInfo } from 'src/app/core/models';
 
 @Component({
   selector: 'app-flight-info',
@@ -7,6 +8,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FlightInfoComponent implements OnInit {
+  @Input()
+  flightInfo!: IFlightInfo;
+
   constructor() {}
 
   ngOnInit(): void {}

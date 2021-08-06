@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule } from '@ngneat/transloco';
 import {
   DxButtonModule,
@@ -8,6 +9,7 @@ import {
   DxValidationGroupModule,
   DxValidatorModule
 } from 'devextreme-angular';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { FlightBaseComponent } from './flight-base/flight-base.component';
 import { FlightInfoListComponent } from './flight-info-list/flight-info-list.component';
 import { FlightInfoComponent } from './flight-info/flight-info.component';
@@ -24,7 +26,9 @@ import { FlightSearchPanelComponent } from './flight-search-panel/flight-search-
     DxValidationGroupModule,
     DxValidatorModule,
     DxDateBoxModule,
-    DxButtonModule
+    DxButtonModule,
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   exports: []
 })
