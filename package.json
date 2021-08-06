@@ -1,5 +1,5 @@
 {
-  "name": "angular-base-app",
+  "name": "flight-search-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

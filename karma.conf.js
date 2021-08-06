@@ -26,7 +26,7 @@ module.exports = function (config) {
     },
     coverageReporter: {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      dir: require('path').join(__dirname, './coverage/Angular-Base-App'),
+      dir: require('path').join(__dirname, './coverage/Flight-Search-App'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }]
     },
