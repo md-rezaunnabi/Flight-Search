@@ -1,5 +1,5 @@
 <div class="search-form-container bg-white p-4">
-    <form class="search-form d-flex justify-content-center align-items-center" (ngSubmit)="onFormSubmit()">
+    <dx-validation-group #searchFormValGroup class="search-form d-flex justify-content-center align-items-center">
         <div class="form-field">
             <dx-text-box stylingMode="outlined" height="50" width="300"
                 [placeholder]="'enterDepartureAirportCode'|transloco"
@@ -43,8 +43,8 @@
         </div>
         <div class="form-field">
             <dx-button stylingMode="contained" height="50" width="150" icon="search" type="default"
-                useSubmitBehavior="true" [text]="'search'|transloco">
+                useSubmitBehavior="true" [text]="'search'|transloco" (onClick)="onFormSubmit()">
             </dx-button>
         </div>
-    </form>
+    </dx-validation-group>
 </div>
