@@ -1,5 +1,4 @@
 .main-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #e6eef375;
+  height: 100vh;
 }
