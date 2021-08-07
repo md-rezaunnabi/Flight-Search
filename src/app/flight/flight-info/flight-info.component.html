@@ -8,12 +8,12 @@
     </div>
     <div class="flight-duration">
         <div class="inbound">
-            <span>{{flightInfo.InboundFlightsDuration | formatFlightDuration}}</span>
+            <span>{{flightInfo.InboundFlightsDuration | formatFlightDuration:('hours' | transloco):('minutes'| transloco)}}</span>
             <i class="dx-icon-arrowright"></i>
         </div>
         <div class="outbound">
             <i class="dx-icon-arrowleft"></i>
-            <span>{{flightInfo.OutboundFlightsDuration | formatFlightDuration}}</span>
+            <span>{{flightInfo.OutboundFlightsDuration | formatFlightDuration:('hours' | transloco):('minutes'| transloco)}}</span>
         </div>
     </div>
     <div class="flight-price">

@@ -7,12 +7,12 @@ import { TranslocoService } from '@ngneat/transloco';
 export class FlightDurationPipe implements PipeTransform {
   constructor(private translocoService: TranslocoService) {}
 
-  transform(flightDuration: string): string {
+  transform(flightDuration: string, hourText: string, minuteText: string): string {
     if (flightDuration.includes(':')) {
       const duration: string[] = flightDuration.split(':');
-      flightDuration = `${duration[0]} ${this.translocoService.translate('hours')}`;
+      flightDuration = `${duration[0]} ${hourText}`;
       if (duration[1] !== '0' && duration[1] !== '00')
-        flightDuration = `${flightDuration} ${duration[1]} ${this.translocoService.translate('minutes')}`;
+        flightDuration = `${flightDuration} ${duration[1]} ${minuteText}`;
     }
     return flightDuration;
   }
