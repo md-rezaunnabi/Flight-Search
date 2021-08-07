@@ -7,5 +7,7 @@
   "enterArrivalDate": "Enter Arrival Date",
   "departureDateRequiredValMsg": "Departure Date is required!",
   "searchByAirlineName": "Search your flights by airline name",
-  "findFlights": "Find Flights"
+  "findFlights": "Find Flights",
+  "hours": "Hours",
+  "minutes": "Minutes"
 }

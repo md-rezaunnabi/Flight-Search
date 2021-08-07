@@ -10,6 +10,7 @@ import {
   DxValidatorModule
 } from 'devextreme-angular';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SharedModule } from '../shared/shared.module';
 import { FlightBaseComponent } from './flight-base/flight-base.component';
 import { FlightInfoListComponent } from './flight-info-list/flight-info-list.component';
 import { FlightInfoComponent } from './flight-info/flight-info.component';
@@ -20,6 +21,7 @@ import { FlightSearchPanelComponent } from './flight-search-panel/flight-search-
   declarations: [FlightBaseComponent, FlightInfoComponent, FlightInfoListComponent, FlightSearchPanelComponent],
   imports: [
     CommonModule,
+    SharedModule,
     TranslocoModule,
     FlightRoutingModule,
     DxTextBoxModule,

@@ -1,3 +1,8 @@
 <div *ngIf="flightInfo">
     {{flightInfo.AirlineName}}
+    <img [src]="flightInfo.AirlineLogoAddress" [appFallbackImage] loading="lazy" class="fligh-info-airline-img" />
+    {{flightInfo.InboundFlightsDuration | formatFlightDuration}}
+    {{flightInfo.OutboundFlightsDuration | formatFlightDuration}}
+    {{flightInfo.Stops}}
+    {{flightInfo.TotalAmount}}
 </div>
