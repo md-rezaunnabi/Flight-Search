@@ -7,7 +7,7 @@ import { FlightInfoStore } from '../states';
 
 @Injectable({ providedIn: 'root' })
 export class FlightService {
-  isFetchingFlightInfos$ = new BehaviorSubject<boolean>(false);
+  isFetchingFlightInfos$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient, private flightInfoStore: FlightInfoStore) {}
 

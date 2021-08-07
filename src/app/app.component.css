@@ -3,3 +3,10 @@
   min-height: 100%;
   width: 100%;
 }
+
+.lazy-loader-img {
+  display: block;
+  margin: auto;
+  width: 25%;
+  object-fit: contain;
+}
