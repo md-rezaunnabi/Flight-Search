@@ -6,9 +6,13 @@
   "enterDepartureDate": "Enter Departure Date *",
   "enterArrivalDate": "Enter Arrival Date",
   "departureDateRequiredValMsg": "Departure Date is required!",
-  "searchByAirlineName": "Search your flights by airline name",
+  "searchByAirlineName": "Search your flights by Airline Name",
   "findFlights": "Find Flights",
   "hours": "Hours",
   "minutes": "Minutes",
-  "stops": "Stops"
+  "stops": "Stops",
+  "noFlightsFoundByThisAirlineName": "There is no flights available by this Airline",
+  "findYourDesiredFlight": "Choose Airport and Date to find your desired flights",
+  "previous": "Previous",
+  "next": "Next"
 }

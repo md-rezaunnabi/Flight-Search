@@ -1,7 +1,26 @@
 .search-form-container {
-  border-radius: 10px;
+  position: fixed;
+  width: 100%;
+  padding: 0.75rem !important;
+  background-image: linear-gradient(
+    to right,
+    var(--theme-primary-color),
+    var(--theme-secondary-color)
+  );
 }
 
 .search-form .form-field {
   margin: 10px;
+}
+
+::ng-deep .search-form-container .dx-button-mode-contained.dx-button-default {
+  background-color: var(--theme-primary-color);
+  font-size: 1rem;
+}
+
+::ng-deep
+  .search-form-container
+  .dx-button-mode-contained.dx-button-default.dx-state-hover {
+  background-color: var(--theme-primary-color-bold);
+  font-size: 1rem;
 }

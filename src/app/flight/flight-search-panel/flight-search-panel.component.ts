@@ -26,17 +26,21 @@ export class FlightSearchPanelComponent implements OnInit {
     const { isValid } = this.searchFormValGroup?.instance?.validate?.();
     if (!isValid) return;
 
+    // startloader and fetch flight infos
+    this.flightService.isFetchingFlightInfos$.next(true);
     this.flightService
       .getFlightInfos(this.flightSearchRequest)
       .pipe(
         untilDestroyed(this),
         finalize(() => {
-          // stop loader here
+          // stop loader
+          this.flightService.isFetchingFlightInfos$.next(false);
         })
       )
       .subscribe({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         error: (error) => {
-          // show error the alert
+          //TODO: show error the alert to user or feed it to global error handlet
         }
       });
   }

@@ -1,19 +1,89 @@
+.flight-info-list-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-by-airline-container {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  width: 50%;
+  top: 160px;
+}
+
 .search-by-airline-name-txt {
   border: none;
-  border-bottom: 1px solid #03a9f4;
-  border-radius: unset;
-  padding: 5px 30px 5px 15px;
+  border-bottom: 2px solid var(--theme-primary-color);
+  border-radius: 5px;
+  padding: 10px 30px 10px 15px;
   font-size: 14px;
   width: 100%;
+  box-shadow: 0 1px 4px 0 var(--bs-gray);
+  z-index: 900;
 }
 
 .search-by-airline-name-txt:focus {
-  box-shadow: none;
+  box-shadow: 0 1px 4px 0 var(--bs-gray);
   outline: 0;
 }
 
-.search-by-airline-container .dx-icon-search {
+.search-by-airline-container i {
   position: relative;
-  top: 10px;
-  right: 20px;
+  right: 25px;
+  color: var(--theme-secondary-color);
+  z-index: 900;
+}
+
+.search-by-airline-container i.dx-icon-close {
+  cursor: pointer;
+}
+
+.flight-info-list-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  overflow: auto;
+  margin-top: 55px;
+}
+
+.flight-info-list-pagination {
+  margin-top: 10px;
+}
+
+::ng-deep .ngx-pagination .current {
+  background: var(--theme-primary-color) !important;
+  border-radius: 5px;
+}
+
+.flights-loader-img {
+  height: 350px;
+  width: auto;
+  margin-top: -175px;
+}
+
+.no-flights-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flights-base-img {
+  height: 400px;
+  width: auto;
+}
+
+.no-flights-img {
+  height: 300px;
+  width: auto;
+}
+
+.no-flights-txt {
+  margin-top: 50px;
+  color: var(--bs-secondary);
+  font-size: 1.4rem;
 }

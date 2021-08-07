@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { guid } from '@datorama/akita';
-import { catchError, map, Observable, retry } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, retry } from 'rxjs';
 import { FLightApiConstants, IFlightInfo, IFlightSearchRequest } from '../models';
 import { FlightInfoStore } from '../states';
 
 @Injectable({ providedIn: 'root' })
 export class FlightService {
+  isFetchingFlightInfos$ = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient, private flightInfoStore: FlightInfoStore) {}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

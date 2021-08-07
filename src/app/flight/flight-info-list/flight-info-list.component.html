@@ -1,19 +1,47 @@
-<div>
-    <div class="search-by-airline-container d-flex">
-        <input [formControl]="searchByAirlineNameField" [placeholder]="'searchByAirlineName' | transloco"
-            class="search-by-airline-name-txt" type="text" />
-        <i class="dx-icon-search"></i>
-    </div>
-    <ng-container *ngIf="{ flightInfos:flightInfos$ | async } as TemplateData">
-        <div class="d-flex flex-column align-items-center" *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
-            <ng-container *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 20, currentPage: currentPage };
-         trackBy: trackById">
-                <app-flight-info [flightInfo]="flightInfo"></app-flight-info>
+<div class="flight-info-list-container" [style.height.px]="flightInfoListHeight">
+    <ng-container *ngIf="{
+        flightInfos:flightInfos$ | async,
+        isFetchingFlightInfos:flightService.isFetchingFlightInfos$ | async,
+        searchByAirlineNameFieldValue:uiQuery.searchByAirlineNameFieldValue$ | async
+     } as TemplateData">
+        <ng-container *ngIf="!TemplateData.isFetchingFlightInfos else ShowFlightsLoader">
+            <div class="search-by-airline-container"
+                *ngIf="TemplateData.flightInfos?.length || TemplateData.searchByAirlineNameFieldValue">
+                <input [formControl]="searchByAirlineNameField" [placeholder]="'searchByAirlineName' | transloco"
+                    class="search-by-airline-name-txt" type="text" />
+                <i *ngIf="!TemplateData.searchByAirlineNameFieldValue" class="dx-icon-search"></i>
+                <i *ngIf="TemplateData.searchByAirlineNameFieldValue" class="dx-icon-close" (click)="clearSearch()"></i>
+            </div>
+            <ng-container *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
+                <div class="flight-info-list-display" [style.height.px]="flightInfoListHeight-120">
+                    <app-flight-info *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 15, currentPage: currentPage };
+         trackBy: trackById" [flightInfo]="flightInfo">
+                    </app-flight-info>
+                </div>
+                <div class="flight-info-list-pagination">
+                    <pagination-controls [autoHide]="true" [previousLabel]="'previous' | transloco"
+                        [nextLabel]="'next' | transloco" (pageChange)="currentPage = $event">
+                    </pagination-controls>
+                </div>
             </ng-container>
-            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
-        </div>
+        </ng-container>
+        <ng-template #ShowFlightsLoader>
+            <div class="flights-loader-container">
+                <img src="../../../assets/images/flight.gif" class="flights-loader-img" />
+            </div>
+        </ng-template>
+        <ng-template #ShowNoFlights>
+            <div class="no-flights-container">
+                <ng-container *ngIf="TemplateData.isFetchingFlightInfos">
+                </ng-container>
+                <img [src]="TemplateData.searchByAirlineNameFieldValue?.trim() ?
+                    '../../../assets/images/empty-search.png' : '../../../assets/images/world-map.png'"
+                    [ngClass]="TemplateData.searchByAirlineNameFieldValue?.trim() ? 'no-flights-img':'flights-base-img'" />
+                <h4 class="no-flights-txt">
+                    {{TemplateData.searchByAirlineNameFieldValue?.trim() ?
+                    ('noFlightsFoundByThisAirlineName'| transloco) :('findYourDesiredFlight'| transloco)}}
+                </h4>
+            </div>
+        </ng-template>
     </ng-container>
-    <ng-template #ShowNoFlights>
-        <p>No flights</p>
-    </ng-template>
 </div>

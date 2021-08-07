@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 import { IFlightInfo } from 'src/app/core/models';
-import { FlightInfoQuery, UIStore } from 'src/app/core/states';
+import { FlightService } from 'src/app/core/services';
+import { FlightInfoQuery, UIQuery, UIStore } from 'src/app/core/states';
 
 @UntilDestroy()
 @Component({
@@ -14,14 +15,21 @@ import { FlightInfoQuery, UIStore } from 'src/app/core/states';
 })
 export class FlightInfoListComponent implements OnInit {
   currentPage = 1;
+  flightInfoListHeight = 500;
   searchByAirlineNameField: FormControl = new FormControl();
   flightInfos$: Observable<IFlightInfo[]> = this.flightInfoQuery.allFlightInfos$();
 
-  constructor(private flightInfoQuery: FlightInfoQuery, private uiStore: UIStore) {}
+  constructor(
+    public flightService: FlightService,
+    private flightInfoQuery: FlightInfoQuery,
+    private uiStore: UIStore,
+    public uiQuery: UIQuery
+  ) {}
 
   ngOnInit(): void {
-    // clear the search text
+    // clear the search text and calc intial flight info list height
     this.clearSearch();
+    this.caclflightInfoListHeight();
 
     // listen to searchfield value change with a delay of 300ms
     this.searchByAirlineNameField.valueChanges
@@ -29,6 +37,11 @@ export class FlightInfoListComponent implements OnInit {
       .subscribe((searchText) => {
         this.uiStore.update(() => ({ searchByAirlineNameFieldValue: searchText }));
       });
+  }
+
+  @HostListener('window:resize')
+  caclflightInfoListHeight(): void {
+    if (window?.innerHeight) this.flightInfoListHeight = window.innerHeight - 150;
   }
 
   clearSearch(): void {
