@@ -1,8 +1,22 @@
-<div *ngIf="flightInfo">
-    {{flightInfo.AirlineName}}
-    <img [src]="flightInfo.AirlineLogoAddress" [appFallbackImage] loading="lazy" class="fligh-info-airline-img" />
-    {{flightInfo.InboundFlightsDuration | formatFlightDuration}}
-    {{flightInfo.OutboundFlightsDuration | formatFlightDuration}}
-    {{flightInfo.Stops}}
-    {{flightInfo.TotalAmount}}
+<div class="fligh-info-container" *ngIf="flightInfo">
+    <div>
+        <img [src]="flightInfo.AirlineLogoAddress" [appFallbackImage] loading="lazy" />
+    </div>
+    <div>
+        <p class="airline-name"> {{flightInfo.AirlineName}}</p>
+        <p class="flight-stops"> {{flightInfo.Stops}} {{'stops' | transloco}}</p>
+    </div>
+    <div class="flight-duration">
+        <div class="inbound">
+            <span>{{flightInfo.InboundFlightsDuration | formatFlightDuration}}</span>
+            <i class="dx-icon-arrowright"></i>
+        </div>
+        <div class="outbound">
+            <i class="dx-icon-arrowleft"></i>
+            <span>{{flightInfo.OutboundFlightsDuration | formatFlightDuration}}</span>
+        </div>
+    </div>
+    <div class="flight-price">
+        <span>{{flightInfo.TotalAmount | currency}}</span>
+    </div>
 </div>

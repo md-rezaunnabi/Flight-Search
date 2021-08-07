@@ -1,17 +1,19 @@
-<div class="search-by-airline-container d-flex">
-    <input [formControl]="searchByAirlineNameField" [placeholder]="'searchByAirlineName' | transloco"
-        class="search-by-airline-name-txt" type="text" />
-    <i class="dx-icon-search"></i>
-</div>
-<ng-container *ngIf="{ flightInfos:flightInfos$ | async } as TemplateData">
-    <div class="d-flex flex-column align-items-center" *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
-        <ng-container *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 20, currentPage: currentPage };
-         trackBy: trackById">
-            <app-flight-info [flightInfo]="flightInfo"></app-flight-info>
-        </ng-container>
-        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+<div>
+    <div class="search-by-airline-container d-flex">
+        <input [formControl]="searchByAirlineNameField" [placeholder]="'searchByAirlineName' | transloco"
+            class="search-by-airline-name-txt" type="text" />
+        <i class="dx-icon-search"></i>
     </div>
-</ng-container>
-<ng-template #ShowNoFlights>
-    <p>No flights</p>
-</ng-template>
+    <ng-container *ngIf="{ flightInfos:flightInfos$ | async } as TemplateData">
+        <div class="d-flex flex-column align-items-center" *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
+            <ng-container *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 20, currentPage: currentPage };
+         trackBy: trackById">
+                <app-flight-info [flightInfo]="flightInfo"></app-flight-info>
+            </ng-container>
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+    </ng-container>
+    <ng-template #ShowNoFlights>
+        <p>No flights</p>
+    </ng-template>
+</div>

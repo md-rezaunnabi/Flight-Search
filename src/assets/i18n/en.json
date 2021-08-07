@@ -9,5 +9,6 @@
   "searchByAirlineName": "Search your flights by airline name",
   "findFlights": "Find Flights",
   "hours": "Hours",
-  "minutes": "Minutes"
+  "minutes": "Minutes",
+  "stops": "Stops"
 }

@@ -1,7 +1,87 @@
-.fligh-info-airline-img {
+.fligh-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  border-radius: 0.5rem;
+  box-shadow: rgb(0 0 0 / 13%) 0px 2px 4px 0px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.fligh-info-container div {
+  margin: 0 2rem;
+}
+
+.fligh-info-container img {
   display: inline-block;
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.airline-name {
+  color: #000;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-bottom: 0.1rem;
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flight-stops {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.flight-duration {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  padding: 0 0.5rem;
+}
+
+.flight-duration div {
+  width: 200px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flight-duration .inbound {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #51e2c2;
+}
+
+.flight-duration .inbound i {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.flight-duration .outbound {
+  padding-top: 0.25rem;
+  border-top: 1px solid #51e2c2;
+}
+
+.flight-duration .outbound i {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.flight-price {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
 }
