@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { appHeaderHeight } from 'src/app/core/helpers';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  headerHeight = appHeaderHeight;
   constructor(public translocoService: TranslocoService) {}
 
   ngOnInit(): void {}

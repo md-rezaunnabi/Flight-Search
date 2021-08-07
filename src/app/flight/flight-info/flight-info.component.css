@@ -1,5 +1,6 @@
 .fligh-info-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: auto;
@@ -10,7 +11,7 @@
   padding: 0.5rem;
 }
 
-.fligh-info-container div {
+.fligh-info-container > div {
   margin: 0 2rem;
 }
 
@@ -20,6 +21,10 @@
   height: 40px;
   border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.airline-info {
+  text-align: left;
 }
 
 .airline-name {
@@ -85,4 +90,18 @@
   font-size: 1.5rem;
   text-align: center;
   width: 175px;
+}
+
+@media only screen and (max-width: 600px) {
+  .fligh-info-container {
+    flex-direction: column;
+  }
+
+  .fligh-info-container > div {
+    margin: 0.1rem;
+  }
+
+  .airline-info {
+    text-align: center;
+  }
 }

@@ -2,7 +2,7 @@
     <div>
         <img [src]="flightInfo.AirlineLogoAddress" [appFallbackImage] loading="lazy" />
     </div>
-    <div>
+    <div class="airline-info">
         <p class="airline-name"> {{flightInfo.AirlineName}}</p>
         <p class="flight-stops"> {{flightInfo.Stops}} {{'stops' | transloco}}</p>
     </div>

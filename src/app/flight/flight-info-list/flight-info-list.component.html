@@ -13,22 +13,21 @@
                 <i *ngIf="TemplateData.searchByAirlineNameFieldValue" class="dx-icon-close" (click)="clearSearch()"></i>
             </div>
             <ng-container *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
-                <div class="flight-info-list-display" [style.height.px]="flightInfoListHeight-120">
+                <div class="flight-info-list-display" [style.height.px]="flightInfoListHeight-60">
                     <app-flight-info *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 15, currentPage: currentPage };
          trackBy: trackById" [flightInfo]="flightInfo">
                     </app-flight-info>
                 </div>
                 <div class="flight-info-list-pagination">
-                    <pagination-controls [autoHide]="true" [previousLabel]="'previous' | transloco"
-                        [nextLabel]="'next' | transloco" (pageChange)="currentPage = $event">
+                    <pagination-controls [autoHide]="true" [maxSize]="5" [responsive]="true"
+                        [previousLabel]="'previous' | transloco" [nextLabel]="'next' | transloco"
+                        (pageChange)="currentPage = $event">
                     </pagination-controls>
                 </div>
             </ng-container>
         </ng-container>
         <ng-template #ShowFlightsLoader>
-            <div class="flights-loader-container">
-                <img src="../../../assets/images/flight.gif" class="flights-loader-img" />
-            </div>
+            <img src="../../../assets/images/flight-loader.gif" class="flights-loader-img" />
         </ng-template>
         <ng-template #ShowNoFlights>
             <div class="no-flights-container">
@@ -37,10 +36,10 @@
                 <img [src]="TemplateData.searchByAirlineNameFieldValue?.trim() ?
                     '../../../assets/images/empty-search.png' : '../../../assets/images/world-map.png'"
                     [ngClass]="TemplateData.searchByAirlineNameFieldValue?.trim() ? 'no-flights-img':'flights-base-img'" />
-                <h4 class="no-flights-txt">
+                <span class="no-flights-txt">
                     {{TemplateData.searchByAirlineNameFieldValue?.trim() ?
                     ('noFlightsFoundByThisAirlineName'| transloco) :('findYourDesiredFlight'| transloco)}}
-                </h4>
+                </span>
             </div>
         </ng-template>
     </ng-container>

@@ -1,5 +1,5 @@
-<div class="search-form-container">
-    <dx-validation-group #searchFormValGroup class="search-form d-flex justify-content-center align-items-center">
+<div id="flightSearchFormContainer">
+    <dx-validation-group #searchFormValGroup class="flight-search-form">
         <div class="form-field">
             <dx-text-box stylingMode="outlined" height="50" width="300"
                 [placeholder]="'enterDepartureAirportCode'|transloco"
@@ -27,7 +27,7 @@
             </dx-text-box>
         </div>
         <div class="form-field">
-            <dx-date-box stylingMode="outlined" height="50" width="300" displayFormat="d MMM y"
+            <dx-date-box stylingMode="outlined" height="50" width="200" displayFormat="d MMM y"
                 [placeholder]="'enterDepartureDate'|transloco" [(value)]="flightSearchRequest.DepartureDate">
                 <dx-validator>
                     <dxi-validation-rule type="required" [message]="'departureDateRequiredValMsg' | transloco">
@@ -36,14 +36,14 @@
             </dx-date-box>
         </div>
         <div class="form-field">
-            <dx-date-box stylingMode="outlined" height="50" width="300" displayFormat="d MMM y"
+            <dx-date-box stylingMode="outlined" height="50" width="200" displayFormat="d MMM y"
                 [placeholder]="'enterArrivalDate'|transloco" [min]="flightSearchRequest.DepartureDate"
                 [(value)]="flightSearchRequest.ArrivalDate">
             </dx-date-box>
         </div>
         <div class="form-field">
-            <dx-button stylingMode="contained" height="50" icon="airplane" type="default" useSubmitBehavior="true"
-                [text]="'findFlights'|transloco" (onClick)="onFormSubmit()">
+            <dx-button stylingMode="contained" height="50" width="150" icon="airplane" type="default"
+                useSubmitBehavior="true" [text]="'findFlights'|transloco" (onClick)="onFormSubmit()">
             </dx-button>
         </div>
     </dx-validation-group>

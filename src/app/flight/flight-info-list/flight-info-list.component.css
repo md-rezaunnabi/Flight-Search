@@ -1,17 +1,17 @@
 .flight-info-list-container {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .search-by-airline-container {
   display: flex;
-  position: fixed;
   align-items: center;
   width: 50%;
-  top: 160px;
+  position: absolute;
+  top: 10px;
 }
 
 .search-by-airline-name-txt {
@@ -48,42 +48,58 @@
   height: 500px;
   width: 100%;
   overflow: auto;
-  margin-top: 55px;
+  margin-top: 60px;
 }
 
 .flight-info-list-pagination {
-  margin-top: 10px;
+  margin: 5px 0;
 }
 
-::ng-deep .ngx-pagination .current {
+::ng-deep .flight-info-list-pagination .ngx-pagination .current {
   background: var(--theme-primary-color) !important;
   border-radius: 5px;
 }
 
+::ng-deep .flight-info-list-pagination .ngx-pagination {
+  margin-bottom: 0rem;
+}
+
 .flights-loader-img {
-  height: 350px;
-  width: auto;
-  margin-top: -175px;
+  margin-top: -100px;
 }
 
 .no-flights-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .flights-base-img {
-  height: 400px;
-  width: auto;
+  height: auto;
+  max-width: 75%;
+  object-fit: contain;
 }
 
 .no-flights-img {
-  height: 300px;
-  width: auto;
+  height: auto;
+  max-width: 65%;
+  object-fit: contain;
 }
 
 .no-flights-txt {
   margin-top: 50px;
   color: var(--bs-secondary);
   font-size: 1.4rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-by-airline-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .no-flights-txt {
+    font-size: 1.1rem;
+  }
 }
