@@ -31,3 +31,19 @@
   background-color: var(--theme-primary-color-bold);
   font-size: 1rem;
 }
+
+.flight-search-form-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.flight-search-form-collapse h6 {
+  color: white;
+  margin-left: auto;
+}
+
+.flight-search-form-collapse > i {
+  margin-left: auto;
+  font-size: 24px;
+  cursor: pointer;
+}

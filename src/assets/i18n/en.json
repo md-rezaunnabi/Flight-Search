@@ -14,5 +14,6 @@
   "noFlightsFoundByThisAirlineName": "There is no flights available by this Airline",
   "findYourDesiredFlight": "Choose Airport and Date to find your desired flights",
   "previous": "Previous",
-  "next": "Next"
+  "next": "Next",
+  "expandToFindYourDesiredFlights": "Expand to find your desired Flights"
 }

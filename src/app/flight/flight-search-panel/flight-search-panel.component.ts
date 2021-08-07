@@ -14,10 +14,9 @@ import { FlightService } from 'src/app/core/services';
 })
 export class FlightSearchPanelComponent implements OnInit {
   @ViewChild('searchFormValGroup', { static: false }) searchFormValGroup!: DxValidationGroupComponent;
-
   flightSearchRequest: IFlightSearchRequest = <IFlightSearchRequest>{};
 
-  constructor(private flightService: FlightService) {}
+  constructor(public flightService: FlightService) {}
 
   ngOnInit(): void {}
 

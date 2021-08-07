@@ -14,5 +14,6 @@
   "noFlightsFoundByThisAirlineName": "এই এয়ারলাইনে কোন ফ্লাইট পাওয়া যায়নি",
   "findYourDesiredFlight": "আপনার পছন্দসই ফ্লাইট খুঁজতে বিমানবন্দর এবং তারিখ নির্বাচন করুন",
   "previous": "পূর্ববর্তী",
-  "next": "পরবর্তী"
+  "next": "পরবর্তী",
+  "expandToFindYourDesiredFlights": "আপনার কাঙ্ক্ষিত ফ্লাইটগুলি খুঁজে পেতে প্রসারিত করুন"
 }

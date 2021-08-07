@@ -1,9 +1,10 @@
-<div class="flight-info-list-container" [style.height.px]="flightInfoListHeight">
-    <ng-container *ngIf="{
+<ng-container *ngIf="{
+     flightInfoListHeight:flightInfoListHeight$ | async,
         flightInfos:flightInfos$ | async,
         isFetchingFlightInfos:flightService.isFetchingFlightInfos$ | async,
         searchByAirlineNameFieldValue:uiQuery.searchByAirlineNameFieldValue$ | async
      } as TemplateData">
+    <div class="flight-info-list-container" [style.height.px]="TemplateData.flightInfoListHeight">
         <ng-container *ngIf="!TemplateData.isFetchingFlightInfos else ShowFlightsLoader">
             <div class="search-by-airline-container"
                 *ngIf="TemplateData.flightInfos?.length || TemplateData.searchByAirlineNameFieldValue">
@@ -13,7 +14,7 @@
                 <i *ngIf="TemplateData.searchByAirlineNameFieldValue" class="dx-icon-close" (click)="clearSearch()"></i>
             </div>
             <ng-container *ngIf="TemplateData.flightInfos?.length else ShowNoFlights">
-                <div class="flight-info-list-display" [style.height.px]="flightInfoListHeight-60">
+                <div class="flight-info-list-display" [style.height.px]="TemplateData.flightInfoListHeight-60">
                     <app-flight-info *ngFor="let flightInfo of TemplateData.flightInfos | paginate: { itemsPerPage: 15, currentPage: currentPage };
          trackBy: trackById" [flightInfo]="flightInfo">
                     </app-flight-info>
@@ -42,5 +43,5 @@
                 </span>
             </div>
         </ng-template>
-    </ng-container>
-</div>
+    </div>
+</ng-container>
