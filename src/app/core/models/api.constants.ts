@@ -1,3 +1,3 @@
 export class FLightApiConstants {
-  public static readonly SEARCH_FLIGHT = 'http://nmflightapi.azurewebsites.net/api/flight';
+  public static readonly SEARCH_FLIGHT = 'https://nmflightapi.azurewebsites.net/api/flight';
 }
