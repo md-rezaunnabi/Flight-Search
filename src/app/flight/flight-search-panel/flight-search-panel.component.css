@@ -44,6 +44,7 @@
 
 .flight-search-form-collapse > i {
   margin-left: auto;
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 900;
   cursor: pointer;
 }
