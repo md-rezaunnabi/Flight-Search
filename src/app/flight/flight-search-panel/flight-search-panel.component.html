@@ -46,7 +46,8 @@
             </div>
             <div class="form-field">
                 <dx-button stylingMode="contained" height="50" width="150" icon="airplane" type="default"
-                    useSubmitBehavior="true" [text]="'findFlights'|transloco" (onClick)="onFormSubmit()">
+                    useSubmitBehavior="true" [disabled]="flightService.isFetchingFlightInfos$ | async"
+                    [text]="'findFlights'|transloco" (onClick)="onFormSubmit()">
                 </dx-button>
             </div>
         </dx-validation-group>
