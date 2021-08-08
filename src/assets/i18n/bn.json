@@ -5,7 +5,7 @@
   "airportCodeLengthValMsg": "দয়া করে একটি বৈধ ৩ অক্ষরের বিমানবন্দর কোড লিখুন!",
   "enterDepartureDate": "প্রস্থান তারিখ লিখুন *",
   "enterArrivalDate": "আগমনের তারিখ লিখুন",
-  "DepartationDateRequiredValMsg": "প্রস্থান তারিখ আবশ্যক!",
+  "departureDateRequiredValMsg": "প্রস্থান তারিখ আবশ্যক!",
   "searchByAirlineName": "এয়ারলাইনের নাম দিয়ে আপনার ফ্লাইট অনুসন্ধান করুন",
   "findFlights": "ফ্লাইট খুঁজুন",
   "hours": "ঘন্টা",
