@@ -1,27 +1,64 @@
 # Flight Search App
+- site URL : https://findyourflight.netlify.app/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+## Implemented Features 
 
-## Development server
+- Fully responsive for mobile and desktop
+- Find flights by arrival/departure airport code and date
+- Find flights form validations
+- Integrations with web service API and local state caching
+- Search flights locally by airline name
+- One click clear flight results and clear search option
+- Local pagination of flights list
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Not Implemented Features 
 
-## Code scaffolding
+- Flights list filter capability (due to time constraint)
+- Serve side pagination (due to lack of API support)
+- Unit testing (due to time constraint)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## View Source Code In Browser
+- Navigate to: https://github1s.com/md-rezaunnabi/Flight-Search
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Run Locally
 
-## Running unit tests
+Clone the project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+  git clone https://github.com/md-rezaunnabi/Flight-Search.git
+```
 
-## Running end-to-end tests
+Go to the project directory
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+  cd flight-Search
+```
 
-## Further help
+Install dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+  
+## Screenshots (Mobile)
+
+
+![Mobile Screenshot 1](https://i.imgur.com/YYtEFO8.jpg)  ![Mobile Screenshot 2](https://i.imgur.com/fQE3UvK.jpg)  ![Mobile Screenshot 3](https://i.imgur.com/eI8j2ys.jpg)  ![Mobile Screenshot 4](https://i.imgur.com/hKLUlpH.jpg)
+
+## Screenshots (Desktop)
+![Desktop Screenshot 1](https://i.imgur.com/NKCIEWf.png)
+
+![Desktop Screenshot 2](https://i.imgur.com/7NhID9y.png)
+
+![Desktop Screenshot 3](https://i.imgur.com/pWYfV3p.png)
+
+![Desktop Screenshot 4](https://i.imgur.com/sHtgFbM.png)
+
