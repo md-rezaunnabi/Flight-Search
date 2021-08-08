@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { resetStores } from '@datorama/akita';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { DxValidationGroupComponent } from 'devextreme-angular';
 import { finalize } from 'rxjs';
 import { IFlightSearchRequest } from 'src/app/core/models';
 import { FlightService } from 'src/app/core/services';
+import { FlightInfoQuery } from 'src/app/core/states';
 
 @UntilDestroy()
 @Component({
@@ -16,7 +18,7 @@ export class FlightSearchPanelComponent implements OnInit {
   @ViewChild('searchFormValGroup', { static: false }) searchFormValGroup!: DxValidationGroupComponent;
   flightSearchRequest: IFlightSearchRequest = <IFlightSearchRequest>{};
 
-  constructor(public flightService: FlightService) {}
+  constructor(public flightService: FlightService, public flightInfoQuery: FlightInfoQuery) {}
 
   ngOnInit(): void {}
 
@@ -42,5 +44,12 @@ export class FlightSearchPanelComponent implements OnInit {
           //TODO: show error the alert to user or feed it to global error handlet
         }
       });
+  }
+
+  clearResults(): void {
+    // clear local flight state
+    resetStores({
+      exclude: ['UI']
+    });
   }
 }

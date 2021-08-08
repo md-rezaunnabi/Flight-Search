@@ -1,4 +1,5 @@
 <div id="flightSearchFormContainer" *ngIf="{
+        allFlightInfos:flightInfoQuery.allFlightInfos$ | async,
         collapseFlightSearchPanel:flightService.collapseFlightSearchPanel$ | async
      } as TemplateData">
     <ng-container *ngIf="!TemplateData.collapseFlightSearchPanel">
@@ -46,8 +47,14 @@
             </div>
             <div class="form-field">
                 <dx-button stylingMode="contained" height="50" width="150" icon="airplane" type="default"
-                    useSubmitBehavior="true" [disabled]="flightService.isFetchingFlightInfos$ | async"
-                    [text]="'findFlights'|transloco" (onClick)="onFormSubmit()">
+                    [disabled]="flightService.isFetchingFlightInfos$ | async" [text]="'findFlights'|transloco"
+                    (onClick)="onFormSubmit()">
+                </dx-button>
+            </div>
+            <div class="form-field" *ngIf="TemplateData.allFlightInfos?.length">
+                <dx-button stylingMode="contained" height="50" width="50" icon="trash" type="danger"
+                    [disabled]="flightService.isFetchingFlightInfos$ | async" [hint]="'clearResults'|transloco"
+                    (onClick)="clearResults()">
                 </dx-button>
             </div>
         </dx-validation-group>

@@ -15,5 +15,6 @@
   "findYourDesiredFlight": "Choose Airport and Date to find your desired flights",
   "previous": "Previous",
   "next": "Next",
-  "expandToFindYourDesiredFlights": "Expand to find your desired Flights"
+  "expandToFindYourDesiredFlights": "Expand to find your desired Flights",
+  "clearResults": "Clear Results"
 }

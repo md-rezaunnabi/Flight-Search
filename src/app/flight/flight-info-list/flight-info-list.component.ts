@@ -18,7 +18,7 @@ export class FlightInfoListComponent implements OnInit, AfterViewInit {
   currentPage = 1;
   flightInfoListHeight$: BehaviorSubject<number> = new BehaviorSubject<number>(500);
   searchByAirlineNameField: FormControl = new FormControl();
-  flightInfos$: Observable<IFlightInfo[]> = this.flightInfoQuery.allFlightInfos$();
+  flightInfos$: Observable<IFlightInfo[]> = this.flightInfoQuery.filteredFlightInfos$();
 
   constructor(
     public flightService: FlightService,

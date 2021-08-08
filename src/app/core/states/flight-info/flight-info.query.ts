@@ -9,11 +9,13 @@ import { FlightInfoState, FlightInfoStore } from './flight-info.store';
   providedIn: 'root'
 })
 export class FlightInfoQuery extends QueryEntity<FlightInfoState, IFlightInfo> {
+  allFlightInfos$: Observable<IFlightInfo[]> = this.selectAll();
+
   constructor(protected store: FlightInfoStore, private uiQuery: UIQuery) {
     super(store);
   }
 
-  allFlightInfos$(): Observable<IFlightInfo[]> {
+  filteredFlightInfos$(): Observable<IFlightInfo[]> {
     return combineLatest([this.selectAll(), this.uiQuery.searchByAirlineNameFieldValue$]).pipe(
       auditTime(0),
       map(([flightInfos, searchText]) => {
