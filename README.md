@@ -12,6 +12,7 @@
 - Local pagination of flights list
 - Expand/collapse Find flights Panel
 - Localization support for English and Bangla
+- Show loader while lazy loaded module is loading or web service API call is in progress
 
 ## Not Implemented Features 
 
