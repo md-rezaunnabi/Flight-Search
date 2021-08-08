@@ -35,7 +35,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd flight-Search
+  cd Flight-Search
 ```
 
 Install dependencies
