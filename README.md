@@ -10,6 +10,8 @@
 - Search flights locally by airline name
 - One click clear flight results and clear search option
 - Local pagination of flights list
+- Expand/collapse Find flights Panel
+- Localization support for English and Bangla
 
 ## Not Implemented Features 
 
