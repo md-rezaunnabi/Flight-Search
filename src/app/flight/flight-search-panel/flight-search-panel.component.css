@@ -6,6 +6,7 @@
     var(--theme-primary-color),
     var(--theme-secondary-color)
   );
+  z-index: 900;
 }
 
 .flight-search-form {

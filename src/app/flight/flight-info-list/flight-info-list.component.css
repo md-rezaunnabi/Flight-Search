@@ -12,6 +12,7 @@
   width: 50%;
   position: absolute;
   top: 15px;
+  z-index: 900;
 }
 
 .search-by-airline-name-txt {
