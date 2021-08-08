@@ -1,0 +1,20 @@
+{
+  "enterDepartureAirportCode": "Enter Departure Airport Code(Like- MEI) *",
+  "enterArrivalAirportCode": "Enter Arrival Airport Code(Like- LHR) *",
+  "airportCodeRequiredValMsg": "Airport Code is required!",
+  "airportCodeLengthValMsg": "Please enter a valid 3 character Airport Code!",
+  "enterDepartureDate": "Enter Departure Date *",
+  "enterArrivalDate": "Enter Arrival Date",
+  "departureDateRequiredValMsg": "Departure Date is required!",
+  "searchByAirlineName": "Search your flights by Airline Name",
+  "findFlights": "Find Flights",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "stops": "Stops",
+  "noFlightsFoundByThisAirlineName": "There is no flights available by this Airline",
+  "findYourDesiredFlight": "Choose Airport and Date to find your desired flights",
+  "previous": "Previous",
+  "next": "Next",
+  "expandToFindYourDesiredFlights": "Expand to find your desired Flights",
+  "clearResults": "Clear Results"
+}

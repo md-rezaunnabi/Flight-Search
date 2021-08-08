@@ -1,0 +1,26 @@
+.app-header {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 10px 40px;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+  z-index: 900;
+  position: fixed;
+}
+
+.app-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.language-flag {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.language-flag.active {
+  border: 2px solid var(--theme-primary-color);
+  border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+<div class="app-header" [style.height.px]="headerHeight">
+    <div>
+        <img class="me-3" src="../../../assets/images/flight.png" height="35px" width="35px" />
+        <span class="app-title">Flight Search App</span>
+    </div>
+    <div>
+        <img class="language-flag" [class.active]="translocoService.getActiveLang()==='en'"
+            src="../../../assets/images/united-states.png" height="30px" width="30px"
+            (click)="translocoService.setActiveLang('en')" />
+        <img class="language-flag" [class.active]="translocoService.getActiveLang()==='bn'"
+            src="../../../assets/images/bangladesh.png" height="30px" width="30px"
+            (click)="translocoService.setActiveLang('bn')" />
+    </div>
+</div>

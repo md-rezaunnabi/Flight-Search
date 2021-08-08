@@ -1,0 +1,20 @@
+{
+  "enterDepartureAirportCode": "প্রস্থান বিমানবন্দর কোড লিখুন (যেমন- MEI) *",
+  "enterArrivalAirportCode": "প্রবেশের বিমানবন্দর কোড লিখুন (যেমন- LHR) *",
+  "airportCodeRequiredValMsg": "বিমানবন্দর কোড আবশ্যক!",
+  "airportCodeLengthValMsg": "দয়া করে একটি বৈধ ৩ অক্ষরের বিমানবন্দর কোড লিখুন!",
+  "enterDepartureDate": "প্রস্থান তারিখ লিখুন *",
+  "enterArrivalDate": "আগমনের তারিখ লিখুন",
+  "DepartationDateRequiredValMsg": "প্রস্থান তারিখ আবশ্যক!",
+  "searchByAirlineName": "এয়ারলাইনের নাম দিয়ে আপনার ফ্লাইট অনুসন্ধান করুন",
+  "findFlights": "ফ্লাইট খুঁজুন",
+  "hours": "ঘন্টা",
+  "minutes": "মিনিট",
+  "stops": "যাত্রা বিরতি",
+  "noFlightsFoundByThisAirlineName": "এই এয়ারলাইনে কোন ফ্লাইট পাওয়া যায়নি",
+  "findYourDesiredFlight": "আপনার পছন্দসই ফ্লাইট খুঁজতে বিমানবন্দর এবং তারিখ নির্বাচন করুন",
+  "previous": "পূর্ববর্তী",
+  "next": "পরবর্তী",
+  "expandToFindYourDesiredFlights": "আপনার কাঙ্ক্ষিত ফ্লাইটগুলি খুঁজে পেতে প্রসারিত করুন",
+  "clearResults": "ফলাফল মুছুন"
+}

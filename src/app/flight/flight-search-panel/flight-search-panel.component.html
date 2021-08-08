@@ -1,0 +1,69 @@
+<div id="flightSearchFormContainer" *ngIf="{
+        allFlightInfos:flightInfoQuery.allFlightInfos$ | async,
+        collapseFlightSearchPanel:flightService.collapseFlightSearchPanel$ | async
+     } as TemplateData">
+    <ng-container *ngIf="!TemplateData.collapseFlightSearchPanel">
+        <dx-validation-group #searchFormValGroup class="flight-search-form">
+            <div class="form-field">
+                <dx-text-box stylingMode="outlined" height="50" width="300"
+                    [placeholder]="'enterDepartureAirportCode'|transloco"
+                    [(value)]="flightSearchRequest.DepartureAirportCode" [showClearButton]="true">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" [message]="'airportCodeRequiredValMsg' | transloco">
+                        </dxi-validation-rule>
+                        <dxi-validation-rule type="stringLength" [min]="3" [max]="3"
+                            [message]="'airportCodeLengthValMsg' | transloco">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form-field">
+                <dx-text-box stylingMode="outlined" height="50" width="300"
+                    [placeholder]="'enterArrivalAirportCode'|transloco"
+                    [(value)]="flightSearchRequest.ArrivalAirportCode" [showClearButton]="true">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" [message]="'airportCodeRequiredValMsg' | transloco">
+                        </dxi-validation-rule>
+                        <dxi-validation-rule type="stringLength" [min]="3" [max]="3"
+                            [message]="'airportCodeLengthValMsg' | transloco">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form-field">
+                <dx-date-box stylingMode="outlined" height="50" width="200" displayFormat="d MMM y"
+                    [placeholder]="'enterDepartureDate'|transloco" [(value)]="flightSearchRequest.DepartureDate">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" [message]="'departureDateRequiredValMsg' | transloco">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-date-box>
+            </div>
+            <div class="form-field">
+                <dx-date-box stylingMode="outlined" height="50" width="200" displayFormat="d MMM y"
+                    [placeholder]="'enterArrivalDate'|transloco" [min]="flightSearchRequest.DepartureDate"
+                    [(value)]="flightSearchRequest.ArrivalDate">
+                </dx-date-box>
+            </div>
+            <div class="form-field">
+                <dx-button stylingMode="contained" height="50" width="150" icon="airplane" type="default"
+                    [disabled]="flightService.isFetchingFlightInfos$ | async" [text]="'findFlights'|transloco"
+                    (onClick)="onFormSubmit()">
+                </dx-button>
+            </div>
+            <div class="form-field" *ngIf="TemplateData.allFlightInfos?.length">
+                <dx-button stylingMode="contained" height="50" width="50" icon="trash" type="danger"
+                    [disabled]="flightService.isFetchingFlightInfos$ | async" [hint]="'clearResults'|transloco"
+                    (onClick)="clearResults()">
+                </dx-button>
+            </div>
+        </dx-validation-group>
+    </ng-container>
+    <div class="flight-search-form-collapse">
+        <h6 *ngIf="TemplateData.collapseFlightSearchPanel">{{'expandToFindYourDesiredFlights' |transloco}}</h6>
+        <i *ngIf="!TemplateData.collapseFlightSearchPanel" class="dx-icon-chevronup"
+            (click)="flightService.collapseFlightSearchPanel$.next(true)"></i>
+        <i *ngIf="TemplateData.collapseFlightSearchPanel" class="dx-icon-chevrondown"
+            (click)="flightService.collapseFlightSearchPanel$.next(false)"></i>
+    </div>
+</div>

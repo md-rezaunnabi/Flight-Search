@@ -51,6 +51,7 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
-  }
+  },
+  "angular.enable-strict-mode-prompt": false
   // #endregion
 }

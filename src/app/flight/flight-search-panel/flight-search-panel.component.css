@@ -1,0 +1,51 @@
+#flightSearchFormContainer {
+  width: 100%;
+  padding: 0.5rem !important;
+  background-image: linear-gradient(
+    to right,
+    var(--theme-primary-color),
+    var(--theme-secondary-color)
+  );
+  z-index: 900;
+}
+
+.flight-search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flight-search-form .form-field {
+  margin: 10px;
+}
+
+::ng-deep
+  #flightSearchFormContainer
+  .dx-button-mode-contained.dx-button-default {
+  background-color: var(--theme-primary-color);
+  font-size: 1rem;
+}
+
+::ng-deep
+  #flightSearchFormContainer
+  .dx-button-mode-contained.dx-button-default.dx-state-hover {
+  background-color: var(--theme-primary-color-bold);
+  font-size: 1rem;
+}
+
+.flight-search-form-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.flight-search-form-collapse h6 {
+  color: white;
+  margin-left: auto;
+}
+
+.flight-search-form-collapse > i {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+}
